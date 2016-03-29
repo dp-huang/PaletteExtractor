@@ -2,6 +2,7 @@ from collections import namedtuple
 from math import sqrt
 import random
 from PIL import Image
+import sys
 
 Point = namedtuple('Point', ('coords', 'n', 'ct'))
 Cluster = namedtuple('Cluster', ('points', 'center', 'n'))
@@ -75,5 +76,9 @@ def kmeans(points, k, min_diff):
 
 
 if __name__ == '__main__':
-    result = colorz('/Users/admin/Documents/capture.jpg')
-    print result
+    if len(sys.argv) == 2:
+        result = colorz(sys.argv[1])
+        print result
+    else:
+        print 'the arguments should be:'
+        print '    1. png file path'
