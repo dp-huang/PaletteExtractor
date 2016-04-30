@@ -76,9 +76,13 @@ def kmeans(points, k, min_diff):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) == 2:
+    if len(sys.argv) == 3:
+        result = colorz(sys.argv[1], int(sys.argv[2]))
+        print result
+    elif len(sys.argv) == 2:
         result = colorz(sys.argv[1])
         print result
     else:
         print 'the arguments should be:'
         print '    1. png file path'
+        print '    2. the number of colors(optional)'
